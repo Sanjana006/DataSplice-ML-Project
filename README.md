@@ -36,7 +36,7 @@ This imbalance can lead models to ignore the minority class, making recall poor.
 To address this, I used **SMOTENC**, a variant of SMOTE designed for mixed numerical + categorical data.
 
 #### Class distribution plot:
-![Class Imbalance](/Images/heatmap.png)
+![Class Imbalance](/Images/imbalance.png)
 
 ---
 
@@ -47,7 +47,7 @@ A correlation heatmap revealed:
 - Dietary patterns cluster together, while RA has weaker direct feature correlations, indicating a non-linear relationship — suitable for boosting models.
 
 #### Heatmap:
-![Correlation Heatmap](correlation_heatmap.png)
+![Correlation Heatmap](/Images/heatmap.png)
 
 ---
 
