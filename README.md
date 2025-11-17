@@ -106,6 +106,8 @@ I acknowledge the creators of the NHANES-based RA dataset for making it publicly
 
 > *Sanjana Nathani*  
 > MSc Data Science (Year 1)
-> DS605 — Fundamentals of Machine Learning
+> DS605 — Fundamentals of Machine Learning 
+
+
 > Dhirubhai Ambani University (DAU), Gandhinagar
 
