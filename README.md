@@ -36,7 +36,7 @@ This imbalance can lead models to ignore the minority class, making recall poor.
 To address this, I used **SMOTENC**, a variant of SMOTE designed for mixed numerical + categorical data.
 
 #### Class distribution plot:
-![Class Imbalance](class_imbalance_plot.png)
+![Class Imbalance](/Images/heatmap.png)
 
 ---
 
