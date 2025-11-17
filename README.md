@@ -30,10 +30,14 @@ I selected this healthcare problem because:
 ## 📊 **Exploratory Data Analysis (EDA) — Key Insights**
 
 ### **1. Target Class Imbalance**
-A major finding during EDA is the **severe imbalance** between RA (1) and Non‑RA (0) classes.  
-This imbalance can lead models to ignore the minority class, making recall poor.  
+A major finding during EDA is the severe imbalance between RA (1) and Non-RA (0) classes.
+Such imbalance can cause models to overwhelmingly predict the majority class, resulting in **poor recall for the minority RA group.**
 
-To address this, I used **SMOTENC**, a variant of SMOTE designed for mixed numerical + categorical data.
+Although I did not apply SMOTE or SMOTENC in this project, I handled this imbalance through different strategies across models:
+- **Logistic Regression**: I used class weights, which give higher importance to the minority class so the model does not ignore RA cases.
+- **Boosting Models (LightGBM, XGBoost, CatBoost)**: These models inherently handle imbalance better through their tree-based learning process, and I further improved minority-class performance through **threshold tuning**.
+  
+These techniques helped the models pay more attention to the minority “at-risk” class without artificially generating new samples.
 
 #### Class distribution plot:
 ![Class Imbalance](/Images/imbalance.png)
