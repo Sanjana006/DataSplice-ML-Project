@@ -2,7 +2,7 @@
 # 📘 **Rheumatoid Arthritis Progression Prediction**
 **Course Project – DS605: Fundamentals of Machine Learning (FOML)**  
 **Instructor:** Dr. Arpit Rana  
-**Student:** *Sanjana Nathani (M.Sc. Data Science – 1st Year)*  
+**Name:** *Sanjana Nathani (M.Sc. Data Science – 1st Year)*  
 
 ---
 
@@ -46,9 +46,9 @@ These techniques helped the models pay more attention to the minority “at-risk
 
 ### **2. Correlation Insights**
 A correlation heatmap revealed:
-- Moderate positive correlation between **Age**, **BRI**, and RA.
-- Strong correlations among dietary features (calories, proteins, carbs, fats).
-- Dietary patterns cluster together, while RA has weaker direct feature correlations, indicating a non-linear relationship — suitable for boosting models.
+- The highest correlation with RA is around 0.22 (with Age), which is very weak.
+- BRI correlates with RA at roughly 0.13, also weak.
+- All other dietary features (Calories, Protein, Carbohydrates, Fat, Fiber, Caffeine) show extremely small correlations with RA — generally between 0.00 and 0.07.
 
 #### Heatmap:
 ![Correlation Heatmap](/Images/heatmap.png)
@@ -67,26 +67,26 @@ A correlation heatmap revealed:
 ## 🤖 **Models Used & Rationale**
 
 ### **1. Logistic Regression**
-- Acts as the baseline model.
-- Provides feature interpretability valuable in healthcare.
-- Helps understand linear relationships.
+- Serves as a strong baseline model with interpretable coefficients.
+- Achieved Recall = 0.765, the highest among all models.
+- Precision is low (0.143), but high recall makes it valuable in healthcare contexts where missing a positive RA case is worse than false alarms.
 
 ### **2. LightGBM**
-- Extremely efficient for large tabular datasets.
-- Handles mixed features and missing values well.
-- Good for capturing tree‑based non-linearity.
+- Efficient and powerful for tabular data.
+- Achieved the highest F1-Score = 0.246, making it the best overall balanced performer.
+- Precision = 0.153, Recall = 0.633.
 
 ### **3. XGBoost**
-- Strong generalisation ability.
-- Powerful for handling imbalanced datasets (with tuned scale_pos_weight).
-- Regularisation helps avoid overfitting.
+- Strong generalisation and good control over overfitting.
+- Achieved the highest precision = 0.171, meaning fewer false positives.
+- Lower recall (0.428) suggests it misses more RA cases.
 
 ### **4. CatBoost**
-- Naturally supports categorical features, reducing encoding complexity.
-- Performs well with non-linear feature interactions.
-- Robust to data imbalance when tuned.
+- Excellent for handling categorical features.
+- Achieved Recall = 0.723, the second-highest after Logistic Regression.
+- Precision = 0.137, F1-Score = 0.230.
 
-CatBoost and XGBoost gave the best performance in recall and F1-score after applying **SMOTENC** and threshold tuning.
+Overall, **CatBoost** is the best overall model when considering both high recall and strong performance on complex non-linear tabular data, while still maintaining competitive precision and F1-score.
 
 ---
 
